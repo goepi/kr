@@ -22,6 +22,9 @@ int rightRot(unsigned x, unsigned n);
 // 2-9
 int bitCount(unsigned x);
 
+// 2-10
+void lower(char str[]);
+
 int main() {
   int result = htoi("FF");
   printf("Result is %d\n", result);
@@ -44,6 +47,11 @@ int main() {
 
   int bc = bitCount(033);
   printf("bit count %d\n", bc);
+
+  char s[] = "HELLO there YOU.";
+  printf("Original is: %s\n", s);
+  lower(s);
+  printf("Lower is: %s\n", s);
 }
 
 int htoi(char str[]) {
@@ -142,4 +150,9 @@ int bitCount(unsigned x) {
   }
 
   return b;
+}
+
+void lower(char str[]) {
+  int i;
+  while ((str[i] = (str[i] > 'A' && str[i] < 'Z' ? 'a' + str[i] - 'A' : str[i])) != '\0') { i++; }
 }
